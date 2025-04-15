@@ -1,78 +1,191 @@
-import { Box, Container, Heading, Text, VStack, HStack, Link, Icon } from '@chakra-ui/react'
+import { Box, Heading, Text, VStack, HStack, Link, Icon, SimpleGrid } from '@chakra-ui/react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { motion } from 'framer-motion'
+import ThreeDCardProjects from './components/3d-card-projects'
+
+const MotionBox = motion(Box)
+const MotionHeading = motion(Heading)
+
+const projects = [
+  {
+    title: "Cheersfy",
+    description: <>
+      SaaS onde o usuário de criar websites personalizados para serem dados como presente. 
+      <Text as="span" fontWeight="bold"> Frontend: </Text>
+      <Text as="span" fontWeight="bold">NextJS</Text>, 
+      <Text as="span" fontWeight="bold">TailwindCSS</Text>, 
+      <Text as="span" fontWeight="bold">Aceternity UI</Text>. 
+      <Text as="span" fontWeight="bold"> Backend: </Text>
+      <Text as="span" fontWeight="bold">NodeJS</Text>, 
+      <Text as="span" fontWeight="bold">Express</Text>, 
+      <Text as="span" fontWeight="bold">Firebase</Text>. 
+      Integração com Stripe e Pagarme para pagamentos e envio de e-mails com Nodemailer.
+    </>,
+    imageUrl: "/cheersfy-img.png",
+    projectUrl: "https://cheersfy.com"
+  },
+  {
+    title: "Escolha Meu Filme",
+    description: <>
+      Engine gratuita para recomendação de filmes baseada em gênero, popularidade e serviço de streaming. Quer parar de perder horas escolhendo filmes e acabar repetindo um antigo? O escolha meu filme é a solução. 
+      <Text as="span" fontWeight="bold"> Frontend: </Text>
+      <Text as="span" fontWeight="bold">React</Text>, 
+      <Text as="span" fontWeight="bold">Styled Components</Text>. 
+      <Text as="span" fontWeight="bold"> Backend: </Text>
+      <Text as="span" fontWeight="bold">Python</Text>, 
+      <Text as="span" fontWeight="bold">Flask</Text>, 
+      <Text as="span" fontWeight="bold">PostgreSQL</Text>.
+    </>,
+    imageUrl: "/escolhameufilme-img.png",
+    projectUrl: "https://escolhameufilme.com/"
+  }
+]
 
 function App() {
   return (
-    <Box minH="100vh" bg="gray.50">
-      <Container maxW="container.md" py={10}>
-        <VStack gap={8} align="stretch">
-          <Box textAlign="center">
-            <Heading as="h1" size="2xl" mb={4}>
-              Matheus Pessoa
-            </Heading>
-            <Text fontSize="xl" color="gray.600">
-              Desenvolvedor de Software
-            </Text>
-            <Text color="gray.500">
-              Estudante de Sistemas de Informação - UFPE (5º Período)
-            </Text>
-          </Box>
+    <Box minH="100vh" w="100%" bg="gray.900" p={10}>
+      <VStack gap={8} align="stretch" maxW="container.lg" mx="auto">
+        <MotionBox 
+          textAlign="center"
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ duration: 1, type: "spring", bounce: 0.5 }}
+        >
+          <MotionHeading 
+            as="h1" 
+            size="2xl" 
+            mb={4}
+            color="white"
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            Matheus Pessoa
+          </MotionHeading>
+          <Text fontSize="xl" color="gray.300">
+            Desenvolvedor de Software
+          </Text>
+          <Text color="gray.400">
+            Estudante de Sistemas de Informação - UFPE (5º Período)
+          </Text>
+        </MotionBox>
 
-          <Box>
-            <Heading as="h2" size="lg" mb={4}>
-              Sobre Mim
-            </Heading>
-            <Text>
-              Sou um desenvolvedor de software apaixonado por criar soluções inovadoras e impactantes.
-              Atualmente cursando o 5º período de Sistemas de Informação na UFPE, busco constantemente
-              expandir meus conhecimentos e aplicar o que aprendo em projetos práticos.
-            </Text>
-          </Box>
+        <MotionBox
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+        >
+          <MotionHeading 
+            as="h2" 
+            size="lg" 
+            mb={4}
+            color="white"
+            whileHover={{ color: "#CBD5E0" }}
+          >
+            Sobre Mim
+          </MotionHeading>
+          <Text color="gray.300" fontSize="lg" lineHeight="tall">
+            Curso Sistemas de Informação na UFPE e aplico no código tudo que aprendo, com foco em clareza, eficiência e propósito.  
+            Trabalho com Node.js, TypeScript, PostgreSQL, Next.js, React, Firebase e Flask, desenvolvendo desde micro SaaS até APIs escaláveis.  
+            Além da parte técnica, valorizo a empatia, respeito, comunicação clara, escrita objetiva e colaboração. Gosto de discutir ideias resolver problemas em equipe.  
+            Busco sempre criar soluções que funcionam de verdade, com código limpo, boas decisões de produto e atenção aos detalhes.
+          </Text>
 
-          <Box>
-            <Heading as="h2" size="lg" mb={4}>
-              Projetos
-            </Heading>
-            <VStack gap={4} align="stretch">
-              <Box p={5} shadow="md" borderWidth="1px" borderRadius="lg">
-                <Link href="https://escolhameufilme.com" target="_blank">
-                  <Heading as="h3" size="md" mb={2}>
-                    escolhameufilme.com
-                  </Heading>
-                </Link>
-                <Text>
-                  Uma plataforma que ajuda usuários a escolherem filmes baseados em suas preferências.
-                </Text>
-              </Box>
+        </MotionBox>
 
-              <Box p={5} shadow="md" borderWidth="1px" borderRadius="lg">
-                <Link href="https://cheersfy.com" target="_blank">
-                  <Heading as="h3" size="md" mb={2}>
-                    cheersfy.com
-                  </Heading>
-                </Link>
-                <Text>
-                  Uma aplicação que conecta pessoas para momentos de descontração e socialização.
-                </Text>
-              </Box>
-            </VStack>
-          </Box>
+        <MotionBox
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+        >
+          <MotionHeading 
+            as="h2" 
+            size="lg" 
+            mb={8}
+            color="white"
+            whileHover={{ color: "#CBD5E0" }}
+          >
+            Projetos em Destaque
+          </MotionHeading>
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+            {projects.map((project, index) => (
+              <MotionBox
+                key={index}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ 
+                  delay: 1.5 + (index * 0.3), 
+                  duration: 0.5,
+                  type: "spring",
+                  stiffness: 120
+                }}
+                whileHover={{ 
+                  y: -5,
+                  transition: { duration: 0.2 }
+                }}
+              >
+                <ThreeDCardProjects
+                  title={project.title}
+                  description={project.description}
+                  imageUrl={project.imageUrl}
+                  projectUrl={project.projectUrl}
+                />
+              </MotionBox>
+            ))}
+          </SimpleGrid>
+        </MotionBox>
 
-          <Box>
-            <Heading as="h2" size="lg" mb={4}>
-              Contato
-            </Heading>
-            <HStack gap={4}>
+        <MotionBox
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 2.2, duration: 0.5 }}
+        >
+          <MotionHeading 
+            as="h2" 
+            size="lg" 
+            mb={4}
+            color="white"
+            whileHover={{ color: "#CBD5E0" }}
+          >
+            Contato
+          </MotionHeading>
+          <HStack gap={4}>
+            <MotionBox
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              transition={{ delay: 2.4, duration: 0.4, type: "spring" }}
+              whileHover={{ scale: 1.2, rotate: 5 }}
+            >
               <Link href="https://github.com/matheusopessoa" target="_blank">
-                <Icon as={FaGithub} w={6} h={6} />
+                <Icon 
+                  as={FaGithub} 
+                  w={8} 
+                  h={8} 
+                  color="gray.300" 
+                  _hover={{ color: "emerald.400" }}
+                  transition="color 0.3s ease"
+                />
               </Link>
+            </MotionBox>
+            <MotionBox
+              initial={{ rotate: 90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              transition={{ delay: 2.6, duration: 0.4, type: "spring" }}
+              whileHover={{ scale: 1.2, rotate: -5 }}
+            >
               <Link href="https://linkedin.com/in/matheuspessoadev" target="_blank">
-                <Icon as={FaLinkedin} w={6} h={6} />
+                <Icon 
+                  as={FaLinkedin} 
+                  w={8} 
+                  h={8} 
+                  color="gray.300" 
+                  _hover={{ color: "emerald.400" }}
+                  transition="color 0.3s ease"
+                />
               </Link>
-            </HStack>
-          </Box>
-        </VStack>
-      </Container>
+            </MotionBox>
+          </HStack>
+        </MotionBox>
+      </VStack>
     </Box>
   )
 }
