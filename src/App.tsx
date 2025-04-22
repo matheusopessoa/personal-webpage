@@ -84,10 +84,12 @@ function App() {
             Sobre Mim
           </MotionHeading>
           <Text color="gray.300" fontSize="lg" lineHeight="tall">
-            Curso Sistemas de Informação na UFPE e aplico no código tudo que aprendo, com foco em clareza, eficiência e propósito.  
-            Trabalho com Node.js, TypeScript, PostgreSQL, Next.js, React, Firebase e Flask, desenvolvendo desde micro SaaS até APIs escaláveis.  
-            Além da parte técnica, valorizo a empatia, respeito, comunicação clara, escrita objetiva e colaboração. Gosto de discutir ideias resolver problemas em equipe.  
-            Busco sempre criar soluções que funcionam de verdade, com código limpo, boas decisões de produto e atenção aos detalhes.
+          Curso Sistemas de Informação na UFPE e aplico no código tudo que aprendo, com foco em clareza, eficiência e propósito.
+          Atuo com Node.js, TypeScript, PostgreSQL, Next.js, React, Firebase e Flask, desenvolvendo desde micro SaaS até APIs robustas e escaláveis.
+          Além da parte técnica, prezo por empatia, respeito, comunicação clara, escrita objetiva e colaboração. Gosto de discutir ideias e resolver problemas em equipe.
+          Busco criar soluções que realmente funcionem, com código limpo, boas decisões de produto e atenção aos detalhes.
+          Sou co-autor da segunda edição do livro Sistemas de Informação para Iniciantes, disponível na Amazon Brasil, onde revisei, ampliei e aprimorei o capítulo 5, dedicado ao Desenvolvimento de Sistemas.
+          Sigo em constante evolução, sempre buscando aprender mais, contribuir com projetos relevantes e escrever código que faça sentido, para pessoas e para negócios.
           </Text>
 
         </MotionBox>
