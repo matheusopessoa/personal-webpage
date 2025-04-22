@@ -21,7 +21,7 @@ const projects = [
       <Text as="span" fontWeight="bold">Firebase</Text>. 
       Integração com Stripe e Pagarme para pagamentos e envio de e-mails com Nodemailer.
     </>,
-    imageUrl: "/cheersfy-img.png",
+    imageUrl: "/cheersfy.webp",
     projectUrl: "https://cheersfy.com"
   },
   {
@@ -36,7 +36,7 @@ const projects = [
       <Text as="span" fontWeight="bold">Flask</Text>, 
       <Text as="span" fontWeight="bold">PostgreSQL</Text>.
     </>,
-    imageUrl: "/escolhameufilme-img.png",
+    imageUrl: "/escfilme.webp",
     projectUrl: "https://escolhameufilme.com/"
   }
 ]
@@ -146,7 +146,7 @@ function App() {
             color="white"
             whileHover={{ color: "#CBD5E0" }}
           >
-            Contato
+            Me conhça melhor
           </MotionHeading>
           <HStack gap={4}>
             <MotionBox

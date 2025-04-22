@@ -17,7 +17,7 @@ export default function ThreeDCardProjects({
 }: ProjectCardProps) {
   return (
     <Box 
-      width={{base: "80%", md: "100%"}}
+      width={{base: "100%", md: "100%"}}
       mx="auto" 
       border="2px" 
       borderColor="gray.600" 
