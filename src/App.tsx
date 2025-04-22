@@ -1,4 +1,4 @@
-import { Box, Heading, Text, VStack, HStack, Link, Icon, SimpleGrid } from '@chakra-ui/react'
+import { Box, Heading, Text, VStack, HStack, Link, Icon, SimpleGrid, Image } from '@chakra-ui/react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import ThreeDCardProjects from './components/3d-card-projects'
@@ -51,16 +51,35 @@ function App() {
           animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 1, type: "spring", bounce: 0.5 }}
         >
-          <MotionHeading 
-            as="h1" 
-            size="2xl" 
-            mb={4}
-            color="white"
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            Matheus Pessoa
-          </MotionHeading>
+          <HStack spacing={6} justify="center" align="center" mb={4}>
+            <Box
+              position="relative"
+              borderRadius="full"
+              overflow="hidden"
+              boxSize={{ base: "100px", md: "120px" }}
+              border="4px solid"
+              borderColor="blue.500"
+              boxShadow="0 0 20px rgba(66, 153, 225, 0.5)"
+            >
+              <Image
+                src="/eu.webp"
+                alt="Matheus Pessoa"
+                width="100%"
+                height="100%"
+                objectFit="cover"
+                fallbackSrc="https://via.placeholder.com/120"
+              />
+            </Box>
+            <MotionHeading 
+              as="h1" 
+              size="2xl" 
+              color="white"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              Matheus Pessoa
+            </MotionHeading>
+          </HStack>
           <Text fontSize="xl" color="gray.300">
             Desenvolvedor de Software
           </Text>
